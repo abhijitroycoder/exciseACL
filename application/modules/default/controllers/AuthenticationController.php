@@ -49,6 +49,13 @@ class Default_AuthenticationController extends Zend_Controller_Action {
         }
 
         $this->view->form = $form;
+        // can use either one
+//        $rolesTBL = new Default_Model_DbTable_Roles();
+//        $this->view->roles = $rolesTBL->fetchAll();
+
+        $roles = new Default_Model_PrepareAcl();
+        $roleslist = $roles->getRoleMatrix();
+        $this->view->roles = $roleslist;
     }
 
     public function logoutAction() {

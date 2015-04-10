@@ -36,44 +36,4 @@
     <label>Logout</label>
     <uri>/default/authentication/logout</uri>
   </logout>
-=======
-﻿<?xml version="1.0" encoding="utf-8"?>
-<config>
-  <application>
-    <pages>
-      <view>
-        <label>View</label>
-        <uri>/importPermit/applicationDetails/index</uri>
-      </view>
-      <form>
-        <label>Form</label>
-        <uri>/importPermit/apply/index</uri>
-      </form>
-    </pages>
-    <label>APPLICATION</label>
-    <uri>#</uri>
-  </application>
-  <challan>
-    <label>CHALLAN</label>
-    <uri>#</uri>
-    <pages>
-      <generate>
-        <label>Generate</label>
-        <uri>/challan/application/index</uri>
-      </generate>
-      <details>
-        <label>Details</label>
-        <uri>/challan/application/details-challan-entry</uri>
-      </details>
-    </pages>
-  </challan>
-  <login>
-    <label>Login</label>
-    <uri>/default/authentication/login</uri>
-  </login>
-  <logout>
-    <label>Logout</label>
-    <uri>/default/authentication/logout</uri>
-  </logout>
->>>>>>> origin/master
 </config>
