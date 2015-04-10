@@ -1,0 +1,22 @@
+<?php echo $this->doctype(); ?>
+<html>
+    <head>
+        <?php echo $this->headMeta(); ?>
+        <?php echo $this->headTitle(); ?>
+        <?php
+        echo $this->headLink()->prependStylesheet($this->baseUrl() . '/css/style.css');
+       
+                ?>
+ </head>
+ <body class="navbody">
+     <div class="container">
+         <nav>
+        <?php echo $this->navigation()->menu()->setUlClass('clearfix'); ?>
+         </nav>
+        </div>
+     <div>
+        
+<?php echo $this->layout()->content; ?>
+        </div>
+ </body>
+</html>
