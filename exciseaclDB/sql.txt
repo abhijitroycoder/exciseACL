@@ -1,0 +1,18 @@
+select module_name,controller_name,action_name,rolename,permission
+      from modules,controllers,actions,resources_privileges,roles_resources_privileges,roles
+       where modules.idmodules=resources_privileges.idmodules and
+              controllers.idcontrollers=resources_privileges.idcontrollers and
+                actions.idactions=resources_privileges.idactions and
+                  resources_privileges.idresources_privileges=roles_resources_privileges.idresources_privileges and
+                    roles_resources_privileges.idroles=roles.idroles
+					
+select * from roles
+
+select distinct module_name 
+from modules,resources_privileges 
+where modules.idmodules=resources_privileges.idmodules
+
+select distinct module_name,controller_name 
+from modules,controllers,resources_privileges 
+where modules.idmodules=resources_privileges.idmodules and
+      controllers.idcontrollers=resources_privileges.idcontrollers
