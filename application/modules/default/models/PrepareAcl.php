@@ -2,9 +2,8 @@
 
 class Default_Model_PrepareAcl
 {
-    
-    public function getRoleMatrix(){
-        
+    public function getRoles() {
+       
         $db = Zend_Db_Table::getDefaultAdapter();
         
         $selectRoles = new Zend_Db_Select($db);
@@ -12,7 +11,11 @@ class Default_Model_PrepareAcl
         
         $result = $db->fetchAll($selectRoles);
         
-        return $result;
+        return $result; 
+    }
+    public function getRoleMatrix(){
+        
+        
     }
 
 
