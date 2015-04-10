@@ -13,6 +13,7 @@ class Default_AuthenticationController extends Zend_Controller_Action {
     }
 
     public function loginAction() {
+        echo "hi";
         $this->view->headTitle('Login page', 'PREPEND');
 
         if (Zend_Auth::getInstance()->hasIdentity()) {
