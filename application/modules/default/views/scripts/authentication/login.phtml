@@ -5,3 +5,8 @@
 <?php
 echo $this->errorMessage;
 echo $this->form;
+
+foreach($this->roles as $role){
+    echo '<br>';
+    echo $role['rolename'];
+}

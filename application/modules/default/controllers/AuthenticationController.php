@@ -13,7 +13,6 @@ class Default_AuthenticationController extends Zend_Controller_Action {
     }
 
     public function loginAction() {
-  
         $this->view->headTitle('Login page', 'PREPEND');
 
         if (Zend_Auth::getInstance()->hasIdentity()) {
@@ -50,6 +49,15 @@ class Default_AuthenticationController extends Zend_Controller_Action {
         }
 
         $this->view->form = $form;
+        // can use either one
+        // directly access dbtable
+//        $rolesTBL = new Default_Model_DbTable_Roles();
+//        $this->view->roles = $rolesTBL->fetchAll();
+
+        //access dbtable through model
+        $roles = new Default_Model_PrepareAcl();
+        $roleslist = $roles->getRoles();
+        $this->view->roles = $roleslist;
     }
 
     public function logoutAction() {
