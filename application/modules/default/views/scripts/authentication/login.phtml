@@ -1,12 +1,48 @@
 <br /><br />
 <div id="view-content">
-	<p>View script for controller <b>Authentication</b> and script/action name <b>login</b></p>
+    <p>View script for controller <b>Authentication</b> and script/action name <b>login</b></p>
 </div>
 <?php
 echo $this->errorMessage;
 echo $this->form;
 
-foreach($this->roles as $role){
+foreach ($this->roles as $role) {
     echo '<br>';
     echo $role['rolename'];
 }
+
+//foreach($this->roleMatrixList as $roleMatrix){
+//    echo '<br>';
+//    echo $roleMatrix['module_name'];
+//}
+?>
+<table width="300" border="1">
+    <?php if ($this->roleMatrixList) { ?>
+        <tr align="center">
+            <td><b>Module Name</b></td>
+            <td><b>Controller Name</b></td>
+            <td><b>Action Name</b></td>
+            <td><b>Role Name</b></td>
+            <td><b>Permission</b></td>
+        </tr>
+        <?php
+        foreach ($this->roleMatrixList as $roleMatrix) {
+            ?>
+            <tr>
+                <td><?php echo $roleMatrix['module_name']; ?></td>
+                <td><?php echo $roleMatrix['controller_name']; ?></td>
+                <td><?php echo $roleMatrix['action_name']; ?></td>
+                 <td><?php echo $roleMatrix['rolename']; ?></td>
+                  <td><?php echo $roleMatrix['permission']; ?></td>
+            </tr>
+            <?php
+        }
+    } else {
+        ?>
+        <tr>
+            <td>There are no active members in the system.</td>
+        </tr>
+        <?php
+    }
+    ?>
+</table>
